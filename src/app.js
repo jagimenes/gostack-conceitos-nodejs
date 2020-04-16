@@ -95,7 +95,7 @@ app.put("/repositories/:id", validate, (request, response) => {
 app.delete("/repositories/:id", validate, (request, response) => {
   let { id } = request.params;
   let repoIndex = repositories.findIndex((repo) => repo.id === id);
-  repositories.splice(1, repoIndex);
+  repositories.splice(repoIndex, 1);
   return response.status(204).send();
 });
 
